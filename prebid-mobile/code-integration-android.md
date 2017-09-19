@@ -130,7 +130,7 @@ public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
  ```
 
 ### Primary Ad Server is DFP
-For DFP banner, the `loadAd(AdRequest)` has to be called again with updated bids info. If not, same set of bids will be used repeatedly until `loadAd()` is called with a new `AdRequest`. We recommend doing client side auto refresh yourself using code like the following:
+For DFP banner, the `loadAd(AdRequest)` has to be called again to update bids info. If not, same set of bids will be used repeatedly. To avoid that, can use `Prebid.detachUsedBid(AdRequest)` and call `loadAd(AdRequest)` again to remove used bids. For auto referesh, we recommend turning off server side configuration, and doing it on the client side yourself using code like the following:
  ```
 final Handler handler = new Handler(Looper.getMainLooper());
 Runnable refreshRunnable = new Runnable() {
