@@ -151,6 +151,9 @@ nav_sections:
   - top_nav: prebid-mobile
     code: prebid-mobile-contributors
     name: FOR CONTRIBUTORS
+  - top_nav: prebid-mobile
+    code: prebid-mobile-facebook
+    name: FACEBOOK AUDIENCE NETWORK
 
 
 port: 8080
